@@ -111,6 +111,7 @@ authProxy:
   # @schema
   # required: false
   # type: object
+  # additionalProperties: true
   # @schema
   # authProxy.containerSecurityContext -- A security context defines privileges and access control settings for the container.
   containerSecurityContext: {}
@@ -123,6 +124,10 @@ manager:
     name: k6-operator-controller
     # manager.serviceAccount.create -- create the service account (default: true)
     create: true
+
+  # @schema
+  # additionalProperties: true
+  # @schema 
   image:
     # manager.image.registry
     registry: ghcr.io
@@ -169,6 +174,15 @@ manager:
   # @schema
   # required: false
   # type: object
+  # additionalProperties: true
   # @schema
   # manager.containerSecurityContext -- A security context defines privileges and access control settings for the container.
   containerSecurityContext: {}
+
+  # @schema
+  # required: false
+  # type: object
+  # additionalProperties: true
+  # @schema 
+  # manager.podSecurityContext -- A security context defines privileges and access control settings for the pods.
+  podSecurityContext: {}
